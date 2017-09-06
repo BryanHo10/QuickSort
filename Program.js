@@ -1,17 +1,17 @@
 var numArray=[];
 var numDisplay="|";
-var arraySize=1000;
+var arraySize=500;
 var sortDisplay;
 var count=0;
 var w;
 function setup(){
-   createSort();
-    //previewColor();
+   //createSort();
+    previewColor();
 }
 function draw(){
    
-    createTest();
-    //sortColor();
+    //createTest();
+    sortColor();
     console.log(count);
     console.log(arraySize*Math.log(arraySize));
     noLoop();
@@ -25,9 +25,9 @@ function previewColor(){
     w=width/arraySize;
     
     for(var i=0;i<arraySize;i++){
-        numArray[i]=floor(random(50,255));
+        numArray[i]=floor(random(0,225));
         noStroke();
-        fill(numArray[i],0,0);
+        fill(0,numArray[i],0);
         rect(i*w,0,(i+1)*w,height/2);
     }
     
@@ -36,7 +36,7 @@ function sortColor(){
     quickSort(numArray);
     for(var i=0;i<arraySize;i++){
         noStroke();
-         fill(numArray[i],0,0);
+         fill(0,numArray[i],0);
         rect(i*w,(height/2)+5,(i+1)*w,height);
     }
 }
